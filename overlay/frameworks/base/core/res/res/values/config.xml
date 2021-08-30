@@ -90,7 +90,7 @@
          * The remote submix module "audio.r_submix.default" must be installed on the device.
          * The device must be provisioned with HDCP keys (for protected content).
     -->
-    <bool name="config_enableWifiDisplay">false</bool>
+    <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent).
@@ -217,10 +217,10 @@
          This flag controls whether the {@link Display#FLAG_SUPPORTS_PROTECTED_BUFFERS}
          flag is set for wifi displays.
     -->
-    <bool name="config_wifiDisplaySupportsProtectedBuffers">false</bool>
+    <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
-    <bool name="config_wifi_background_scan_support">false</bool>
+    <bool name="config_wifi_background_scan_support">true</bool>
 
     <!-- Wifi driver supports batched scan -->
     <bool name="config_wifi_batched_scan_supported">false</bool>
@@ -484,6 +484,30 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+
     <integer name="config_deviceHardwareWakeKeys">96</integer>
+
+    <!-- Additional, device specific overlays -->
+
+    <!-- 18:9 aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
+    <item name="config_screenAspectRatio" format="float" type="dimen">2.1</item>
+
+    <!-- Status led-->
+    <bool name="config_intrusiveBatteryLed">true</bool>
+    <bool name="config_multiColorBatteryLed">true</bool>
+    <bool name="config_FastChargingLedSupported">true</bool>
+
+     <!-- System info -->
+    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone0/temp</string>
+    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
+    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
+    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
+
+    <!-- Mac randomization -->
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
+
+    <!-- add 802.11r support -->
+    <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool>
 
 </resources>
